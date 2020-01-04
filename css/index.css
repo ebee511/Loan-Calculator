@@ -78,10 +78,11 @@ label {
   display: block;
 }
 
-#error-message {
+.error-message {
   margin: 15px;
+  color: #8a1919;
   background-color: rgb(231, 156, 156);
-  border: 1px solid red;
+  border: 1px solid #c18585;
   border-radius: 5px;
   padding: 3px;
   font-size: 10px;
