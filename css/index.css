@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(54, 54, 54);
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.card {
+  margin: 40px auto;
+  background-color: #fff;
+  width: 260px;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
+.header-text {
+  text-align: center;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+input[type="number"] {
+  width: 80%;
+  font-size: 12px;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #000;
+  margin-right: auto;
+}
+
+.input-container {
+  display: flex;
+  width: 70%;
+  margin: 15px auto;
+}
+
+.fa-usd,
+.fa-percent,
+.fa-calendar {
+  width: 14px;
+  margin-left: auto;
+  background-color: dodgerblue;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  color: #fff;
+  text-align: center;
+}
+
+.submit-btn {
+  text-align: center;
+}
+
+#submit {
+  background-color: rgb(17, 197, 17);
+}
+
+label {
+  font-size: 8px;
+  background-color: dodgerblue;
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  padding: 5px 0;
+  width: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#error-message {
+  margin: 15px;
+  background-color: rgb(231, 156, 156);
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 10px;
+}
