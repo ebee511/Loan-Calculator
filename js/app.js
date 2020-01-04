@@ -37,7 +37,7 @@ function totalLoanCalc(e) {
 
   // check if any values are left empty
   if (principle === "" || interestRate === "" || loanTerm === "") {
-    alert("Error: There is a field left blank. Please try again.");
+    showErrorMsg("Error: There is a field left blank. Please try again.");
     return;
   }
 
@@ -75,7 +75,27 @@ function monthlyPaymentsCalc(totalLoanAmt) {
   console.log(monthlyPaymentAmt);
 }
 
-function showErrorMsg() {}
+function showErrorMsg(error) {
+  // Elements
+  const cardDivEl = document.querySelector(".card");
+  const headingEl = document.querySelector(".header-text");
+
+  //Create div
+  const errorDiv = document.createElement("div");
+  errorDiv.classList.add("error-message");
+  errorDiv.appendChild(document.createTextNode(error));
+
+  //Insert error above heading
+  cardDivEl.insertBefore(errorDiv, headingEl);
+
+  //Clear error after 3 seconds
+  setTimeout(clearErrorMsg, 3000);
+}
+
+// Erase error message.
+function clearErrorMsg() {
+  document.querySelector(".error-message").remove();
+}
 
 // GOALS:
 // - Monthly Payment Amount
