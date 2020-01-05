@@ -87,3 +87,7 @@ label {
   padding: 3px;
   font-size: 10px;
 }
+
+#loading-gif {
+  text-align: center;
+}
