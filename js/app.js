@@ -26,6 +26,16 @@ calculateBtn.addEventListener("click", init);
 function init(e) {
   e.preventDefault();
 
+  // check if any values are left empty
+  if (
+    loanAmount.value === "" ||
+    loanInterest.value === "" ||
+    loanYears.value === ""
+  ) {
+    showErrorMsg("Error: There is a field left blank. Please try again.");
+    return;
+  }
+
   //Hide results div
   resultsDiv.style.display = "none";
   //Show loading icon
@@ -39,12 +49,6 @@ function totalLoanCalc() {
   let principle = loanAmount.value;
   let interestRate = loanInterest.value;
   let loanTerm = loanYears.value;
-
-  // check if any values are left empty
-  if (principle === "" || interestRate === "" || loanTerm === "") {
-    showErrorMsg("Error: There is a field left blank. Please try again.");
-    return;
-  }
 
   decimalInterestRate = interestRate / 1200;
   // find loan term in months
