@@ -20,16 +20,21 @@ let decimalInterestRate;
 let monthsOfLoan;
 
 // EVENT LISTENERS
-calculateBtn.addEventListener("click", totalLoanCalc);
+calculateBtn.addEventListener("click", init);
 
 // FUNCTIONS
-function loadingImage() {
-  loadingIcon.classList.toggle("show");
+function init(e) {
+  e.preventDefault();
+
+  //Hide results div
+  resultsDiv.style.display = "none";
+  //Show loading icon
+  loadingIcon.style.display = "block";
+  //Set timeout for calculate results
+  setTimeout(totalLoanCalc, 2000);
 }
 
-function totalLoanCalc(e) {
-  // to prevent reload of page
-  e.preventDefault();
+function totalLoanCalc() {
   // grab values of variables after click since when we begin they are empty
   let principle = loanAmount.value;
   let interestRate = loanInterest.value;
@@ -58,8 +63,8 @@ function totalLoanCalc(e) {
   monthlyPaymentsInput.value = monthlyPaymentAmt;
   totalPaymentInput.value = totalLoanAmt;
   totalInterestInput.value = totalInterestAmt;
-  resultsDiv.classList.remove("hidden");
-  resultsDiv.classList.add("show");
+  resultsDiv.style.display = "block";
+  loadingIcon.style.display = "none";
 }
 
 function totalInterestCalc(totalLoanAmt) {
@@ -96,11 +101,3 @@ function showErrorMsg(error) {
 function clearErrorMsg() {
   document.querySelector(".error-message").remove();
 }
-
-// GOALS:
-// - Monthly Payment Amount
-// - Total Payment Amount
-// - Total Interest Amount
-
-// If any field is left blank
-// display an error message
